@@ -1,124 +1,125 @@
+Sentiment Analysis Using Machine Learning
+🎯 Project Objective
 
-# Sentiment Analysis Project – Version 3
+To build a Machine Learning–based sentiment analysis system that classifies text into Positive, Negative, and Neutral sentiments.
+This project includes text preprocessing, dataset merging, model training, evaluation, and a simple interface for testing predictions.
 
-A complete end‑to‑end Sentiment Analysis system built using Machine Learning and Deep Learning models, including dataset preprocessing, multimodel training, evaluation, and a Flask web interface for real‑time predictions.
+📂 Dataset Details
 
----
+Final prepared dataset: combined_dataset.csv
 
-## 📂 Project Structure
+Total samples: 31515
 
-```
-senti ana version 3/
-│
-├── app.py                        # Flask backend for the web UI
-├── index.html                    # Frontend interface
-├── background.jpg                # UI background image
-│
-├── train_multi_models.py         # Trains multiple ML/DL models
-├── merge_and_prepare.py          # Merges + cleans raw datasets
-├── test_predict.py               # Tests prediction using saved models
-│
-├── combined_dataset.csv          # Final cleaned dataset
-├── datasets/                     # Raw dataset folder
-│
-├── saved_models/                 # Serialized trained ML/DL models
-│
-├── aiml accuracy output of two models.txt  # Model accuracy comparison
-├── requirements.txt              # Dependencies
-```
+Label distribution:
 
----
+neutral: 12746
 
-## 🚀 Features
+positive: 9851
 
-### ✔ Dataset Preprocessing
-- Merge multiple raw datasets  
-- Clean text (stopwords, lowercase, lemmatization, etc.)  
-- Remove duplicates + missing values  
-- Output: `combined_dataset.csv`
+negative: 8918
 
-### ✔ Model Training
-Models trained in `train_multi_models.py` include:
-- Logistic Regression  
-- SVM  
-- Naive Bayes  
-- Random Forest  
-- LSTM / GRU / Deep Learning models  
+Preprocessing steps:
 
-All saved into `saved_models/`.
+Lowercasing text
 
-### ✔ Evaluation
-- Accuracy  
-- Precision, Recall, F1  
-- Confusion Matrix  
-- Model comparison saved in `.txt` file
+Removing stopwords
 
-### ✔ Web Interface
-- Clean HTML UI  
-- Flask backend  
-- Real‑time sentiment prediction  
+Removing special characters & punctuation
 
----
+(Optional) Lemmatization
 
-## ⚙️ Installation
+Duplicate removal
 
-### 1️⃣ Install dependencies
-```
-pip install -r requirements.txt
-```
+Merging datasets inside the datasets/ folder
 
-### 2️⃣ Preprocess datasets
-```
-python merge_and_prepare.py
-```
+🧠 Algorithms / Models Used
 
-### 3️⃣ Train models
-```
-python train_multi_models.py
-```
+The following Machine Learning algorithms were trained:
 
-### 4️⃣ Test predictions
-```
-python test_predict.py
-```
+Logistic Regression (logreg_pipeline.joblib)
 
----
+Naive Bayes (nb_pipeline.joblib)
 
-## 🌐 Run the Web App
+Random Forest (rf_pipeline.joblib)
 
-```
-python app.py
-```
+Vectorization Method
 
-Open in browser:
+TF–IDF Vectorizer used to convert text into numerical features.
 
-```
-http://127.0.0.1:5000/
-```
+📊 Results (Accuracy & Metrics)
+Cross-validation (f1-weighted mean ± std)
 
----
+Logistic Regression: 0.6978 ± 0.0063
 
-## 📊 Model Performance
-The accuracy comparison is stored in:
+Naive Bayes: 0.6316 ± 0.0068
 
-```
-aiml accuracy output of two models.txt
-```
+Random Forest: 0.6896 ± 0.0015
 
----
+Test Accuracy
 
-## 📁 Saved Models
-Contains all trained models + vectorizers used by the app.
+Logistic Regression: 0.7100
 
----
+Naive Bayes: 0.6571
 
-## 🧱 Tech Stack
-- Python  
-- Flask  
-- Scikit‑learn  
-- TensorFlow / Keras  
-- NLTK  
-- HTML / CSS  
+Random Forest: 0.7045
+
+Short classification report summaries (test set)
+
+Logistic Regression (test)
+
+Accuracy: 0.7100
+
+Weighted F1 ~ 0.71
+
+Naive Bayes (test)
+
+Accuracy: 0.6571
+
+Weighted F1 ~ 0.65
+
+Random Forest (test)
+
+Accuracy: 0.7045
+
+Weighted F1 ~ 0.70
+
+Full classification reports (precision/recall/f1/support per class) are printed during training and saved in console logs.
+
+🗂 Saved Models
+
+Trained models were saved to the saved_models/ folder:
+
+saved_models/logreg_pipeline.joblib
+
+saved_models/nb_pipeline.joblib
+
+saved_models/rf_pipeline.joblib
+
+Note: Some saved model files (e.g., Random Forest) can be large. If you plan to push to GitHub, add saved_models/ to .gitignore or use Git LFS for large files.
+
+📝 Conclusion
+
+Traditional Machine Learning models with proper preprocessing achieve good performance on this dataset. Logistic Regression achieved the highest test accuracy (71.00%), closely followed by Random Forest (70.45%). Naive Bayes performed slightly lower (65.71%) but remains a lightweight and fast baseline.
+
+🚀 Future Scope
+
+Add a separate Neutral handling strategy (if needed for downstream tasks) or re-balance classes.
+
+Perform hyperparameter tuning (Grid Search / Random Search) for each model.
+
+Try advanced text models (transformers like BERT) for potential accuracy gains.
+
+Deploy the best model through Flask on a cloud service (Heroku / Render / AWS).
+
+Provide downloadable model files via GitHub Releases or cloud storage (instead of tracking binaries in repo).
+
+📚 References
+
+Scikit-learn Documentation
+
+NLTK Documentation
+
+Any dataset sources listed in the datasets/ folder
 
 ---
 
