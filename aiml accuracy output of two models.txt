@@ -1,0 +1,74 @@
+PS C:\Users\HP\Desktop\Projects\senti ana version 3> python -u "c:\Users\HP\Desktop\Projects\senti ana version 3\train_multi_models.py"
+
+PS C:\Users\HP\Desktop\Projects\senti ana version 3> python -u "c:\Users\HP\Desktop\Projects\senti ana version 3\train_multi_models.py"
+PS C:\Users\HP\Desktop\Projects\senti ana version 3> python -u "c:\Users\HP\Desktop\Projects\senti ana version 3\train_multi_models.py"
+Total samples: 31515
+Label distribution:
+ label
+neutral     12746
+positive     9851
+negative     8918
+Name: count, dtype: int64
+
+--- Training: logreg ---
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+CV f1-weighted mean/std: 0.697786175022487 0.0063201636919505404
+C:\Users\HP\AppData\Local\Programs\Python\Python313\Lib\site-packages\sklearn\linear_model\_logistic.py:1296: FutureWarning: Using the 'liblinear' solver for multiclass classification is deprecated. An error will be raised in 1.8. Either use another solver which supports the multinomial loss or wrap the estimator in a OneVsRestClassifier to keep applying a one-versus-rest scheme.
+  warnings.warn(
+Test acc: 0.7100253807106599
+Classification report:
+               precision    recall  f1-score   support
+
+           0       0.71      0.67      0.69      1338
+           1       0.66      0.71      0.69      1912
+           2       0.78      0.74      0.76      1478
+
+    accuracy                           0.71      4728
+   macro avg       0.72      0.71      0.71      4728
+weighted avg       0.71      0.71      0.71      4728
+
+Saved saved_models\logreg_pipeline.joblib
+
+--- Training: nb ---
+CV f1-weighted mean/std: 0.6315964897843181 0.006771556415494891
+Test acc: 0.6571489001692047
+Classification report:
+               precision    recall  f1-score   support
+
+           0       0.79      0.47      0.59      1338
+           1       0.57      0.83      0.67      1912
+           2       0.79      0.60      0.68      1478
+
+    accuracy                           0.66      4728
+   macro avg       0.72      0.63      0.65      4728
+weighted avg       0.70      0.66      0.65      4728
+
+Saved saved_models\nb_pipeline.joblib
+
+--- Training: rf ---
+CV f1-weighted mean/std: 0.6896368518388781 0.0015451060158589117
+Test acc: 0.7045262267343486
+Classification report:
+               precision    recall  f1-score   support
+
+           0       0.76      0.57      0.65      1338
+           1       0.63      0.78      0.70      1912
+           2       0.79      0.72      0.75      1478
+
+    accuracy                           0.70      4728
+   macro avg       0.73      0.69      0.70      4728
+weighted avg       0.72      0.70      0.70      4728
+
+Saved saved_models\rf_pipeline.joblib
+
+Saved models to saved_models
+PS C:\Users\HP\Desktop\Projects\senti ana version 3> 
